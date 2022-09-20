@@ -22,6 +22,8 @@ let computerGenChoice = () => {
 };
 
 let matchTied = () => {
+  userinput.innerText = `User: 😐`;
+  comInput.innerText = `Computer: 😑`;
   resultShow.textContent = "Winner: Tied! 😶";
 };
 
