@@ -13,6 +13,10 @@ let resultShow = document.getElementById("result-final-stat");
 let userinput = document.getElementById("result-user-stat");
 let comInput = document.getElementById("result-comp-stat");
 
+let audioDun = new Audio("./audio/DUN DUN DUNNN.mp3");
+let audioWrong = new Audio("audio/Wrong Clakson Sound Effect.mp3");
+let audioMouse = new Audio("audio/mouse sound.wav");
+
 let computerGenChoice = () => {
   let str = "rps";
   let val = "";
@@ -22,24 +26,29 @@ let computerGenChoice = () => {
 };
 
 let matchTied = () => {
+  audioWrong.play();
   userinput.innerText = `User: 😐`;
   comInput.innerText = `Computer: 😑`;
   resultShow.textContent = "Winner: Tied! 😶";
 };
 
 let winnerUser = () => {
+  audioDun.play();
   userCounter++;
   userScore.innerText = userCounter;
   resultShow.textContent = "Winner: User 🥇";
 };
 
 let winnerCom = () => {
+  audioDun.play();
+
   comCounter++;
   comScore.innerText = comCounter;
   resultShow.textContent = "Winner: Robot 🥇";
 };
 
 rock.addEventListener("click", () => {
+  audioMouse.play();
   let value = computerGenChoice();
   let user = "r";
   if (user === value) {
@@ -61,6 +70,8 @@ rock.addEventListener("click", () => {
 });
 
 paper.addEventListener("click", () => {
+  audioMouse.play();
+
   let value = computerGenChoice();
   let user = "p";
   if (user === value) {
@@ -82,6 +93,8 @@ paper.addEventListener("click", () => {
 });
 
 scissor.addEventListener("click", () => {
+  audioMouse.play();
+
   let value = computerGenChoice();
   let user = "s";
   if (user === value) {
